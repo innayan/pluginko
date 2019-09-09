@@ -2,7 +2,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.*
 
 /*
 The settings script is an entry point for defining a TeamCity
-project hierarchy. The script should contain a single call to the
+project shierarchy. The script should contain a single call to the
 project() function with a Project instance or an init function as
 an argument.
 
