@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Connections" uuid="6424582b-2760-4a9d-b19b-a61e8ea61256" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>BitBucket</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_10" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="6Y36naMzw9D9TB6Qwt" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:866a7a64-e8ed-4fde-be43-d64f943ae39e" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_11" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="24172cb4d8cdbcc0e955" />
+        <param name="displayName" value="GitHub.com" />
+        <param name="gitHubUrl" value="https://github.com/" />
+        <param name="providerType" value="GitHub" />
+        <param name="secure:clientSecret" value="credentialsJSON:073bf5c2-da27-4828-a4a3-497f16affb17" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="173a0f91-3225-4217-9b10-8cc6200de48e" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Potential XSS</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_18" type="OAuthProvider">
+      <parameters>
+        <param name="displayName" value="Docker Registry" />
+        <param name="providerType" value="Docker" />
+        <param name="repositoryUrl" value="https://docker.io" />
+        <param name="secure:userPass" value="credentialsJSON:7b507905-a134-4438-85d8-70fca8b0b2c2" />
+        <param name="userName" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert1234);&lt;/script&gt;" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_20" type="JetBrains.SharedResources">
+      <parameters>
+        <param name="name" value="eee" />
+        <param name="type" value="custom" />
+        <param name="values"><![CDATA[A<b>'"&lt;'/>"/><script>alert("re1");</script>
+A<b>'"&lt;'/>"/><script>alert("re2");</script>]]></param>
+      </parameters>
+    </extension>
+    <extension id="repository-nuget-default" type="PackageRepository">
+      <parameters>
+        <param name="indexPackages" value="true" />
+        <param name="name" value="default" />
+        <param name="type" value="nuget" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

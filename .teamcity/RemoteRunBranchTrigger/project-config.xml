@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0d120db3-6107-4b0b-8dfd-d906fc771405" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Remote run branch trigger</name>
+  <parameters />
+  <cleanup />
+</project>
+

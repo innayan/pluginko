@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0c9ba00c-1847-47e4-9d8f-0fbc10fc5b46" type="svn" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>svn: https://subversion.assembla.com/svn/innayan%5einnayan-first-space.inna/trunk/</name>
+  <param name="externals-mode" value="externals-none" />
+  <param name="labelingMessage" value="Labeled automatically by TeamCity" />
+  <param name="labelingPatterns" value="trunk=&gt;tags" />
+  <param name="secure:svn-password" value="credentialsJSON:708afc43-7df5-40c5-89ee-e702bf8d9d9f" />
+  <param name="svn-config-directory" value="C:\Users\Inna.Yankelevich\AppData\Roaming\Subversion" />
+  <param name="svn-use-default-config-directory" value="true" />
+  <param name="url" value="https://subversion.assembla.qcom/svn/innayan%5einnayan-first-space.inna/trunk/" />
+  <param name="user" value="innayan" />
+  <param name="working-copy-format" value="1.8" />
+</vcs-root>
+

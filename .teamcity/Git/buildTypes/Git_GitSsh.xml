@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="26cfd975-910f-4f01-8b13-3e76e7e6eb37" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>git_ssh</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/*.*" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_1" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_15" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo git" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Git_Gitlab" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_1" type="commit-status-publisher">
+        <parameters>
+          <param name="github_authentication_type" value="token" />
+          <param name="github_host" value="https://api.github.com" />
+          <param name="github_username" value="innayan" />
+          <param name="publisherId" value="githubStatusPublisher" />
+          <param name="secure:github_access_token" value="credentialsJSON:1979ae9a-a1dc-4b83-86d0-b079d164e9b1" />
+          <param name="secure:github_password" value="credentialsJSON:bdcff79e-36fe-46f1-aaea-6680197f5418" />
+          <param name="vcsRootId" value="Git_GitGithubComInnayanTest1gitr" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_2" type="commit-status-publisher">
+        <parameters>
+          <param name="gitlabApiUrl" value="http://tcqa-gitlab.labs.intellij.net/api/v3" />
+          <param name="publisherId" value="gitlabStatusPublisher" />
+          <param name="secure:gitlabAccessToken" value="credentialsJSON:c78f8da1-992f-45cf-bbb4-e387a39b0a7d" />
+          <param name="vcsRootId" value="Git_Gitlab" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_3" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="contains" />
+          <param name="buildFailureOnMessage.messagePattern" value="a" />
+          <param name="buildFailureOnMessage.outputText" value="a" />
+          <param name="buildFailureOnMessage.reverse" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="cd68802c-27e8-4a1e-83c6-9267d92db7cc" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>template</name>
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/*.html" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_144" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo test" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Vs1_SvnHttpsLocalhost8443svnJavaEclipse" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="KEEP_RULE_21" type="keepRules">
+        <parameters>
+          <param name="keepData.1.type" value="everything" />
+          <param name="limit.daysCount" value="30" />
+          <param name="limit.type" value="keepNDaysSinceLastBuild" />
+          <param name="preserveArtifacts" value="true" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+      <extension id="KEEP_RULE_99" type="keepRules">
+        <parameters>
+          <param name="keepData.1.type" value="everything" />
+          <param name="keepData.2.artifactsPatterns" value="" />
+          <param name="keepData.2.type" value="artifacts" />
+          <param name="keepData.3.type" value="logs" />
+          <param name="keepData.4.type" value="history" />
+          <param name="keepData.5.type" value="statistics" />
+          <param name="limit.buildsCount" value="5" />
+          <param name="limit.type" value="keepLastNBuilds" />
+          <param name="preserveArtifacts" value="false" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</template>
+

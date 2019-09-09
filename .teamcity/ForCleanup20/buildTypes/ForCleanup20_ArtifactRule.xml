@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="fe1d8a98-57ce-48fa-8fd7-2833927ceffa" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Artifact rule</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/*.zip" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_36" />
+      <setting-ref ref="TRIGGER_13" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_144" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo test
+rem This is a custom script written by TeamCity using windows-1252 charset.
+rem echo ##teamcity[compilationStarted compiler='compiler']
+rem echo ##teamcity[message text='This is a compilation error' errorDetails='Some details' status='ERROR']
+rem echo ##teamcity[compilationFinished compiler='compiler']
+rem echo ##teamcity[buildProblem description='this is a build problem']
+ping 127.0.0.1 -n 200 > nul
+rem exit 1]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="ForCleanup20_SvnHttpsLocalhost8443svnArtifacts" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_13" type="schedulingTrigger">
+        <parameters>
+          <param name="cronExpression_dm" value="*" />
+          <param name="cronExpression_dw" value="?" />
+          <param name="cronExpression_hour" value="*" />
+          <param name="cronExpression_min" value="*" />
+          <param name="cronExpression_month" value="*" />
+          <param name="cronExpression_sec" value="0,30" />
+          <param name="cronExpression_year" value="*" />
+          <param name="dayOfWeek" value="Sunday" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="hour" value="12" />
+          <param name="minute" value="0" />
+          <param name="promoteWatchedBuild" value="true" />
+          <param name="revisionRule" value="lastFinished" />
+          <param name="revisionRuleBuildBranch" value="&lt;default&gt;" />
+          <param name="schedulingPolicy" value="cron" />
+          <param name="timezone" value="SERVER" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_36" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="contains" />
+          <param name="buildFailureOnMessage.messagePattern" value="build" />
+          <param name="buildFailureOnMessage.outputText" value="Failure" />
+          <param name="buildFailureOnMessage.reverse" value="false" />
+        </parameters>
+      </extension>
+      <extension id="KEEP_RULE_13" type="keepRules">
+        <parameters>
+          <param name="filters.1.status" value="failed" />
+          <param name="filters.1.type" value="buildStatus" />
+          <param name="keepData.1.type" value="everything" />
+          <param name="keepData.2.artifactsPatterns" value="" />
+          <param name="keepData.2.type" value="artifacts" />
+          <param name="keepData.3.type" value="logs" />
+          <param name="keepData.4.type" value="history" />
+          <param name="keepData.5.type" value="statistics" />
+          <param name="limit.buildsCount" value="5" />
+          <param name="limit.type" value="keepLastNBuilds" />
+          <param name="preserveArtifacts" value="true" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

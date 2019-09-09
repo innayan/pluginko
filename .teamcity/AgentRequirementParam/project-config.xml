@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5250aab0-2b7f-48a8-8748-4cb76f2d3a05" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>agent requirement param</name>
+  <parameters />
+  <cleanup />
+</project>
+

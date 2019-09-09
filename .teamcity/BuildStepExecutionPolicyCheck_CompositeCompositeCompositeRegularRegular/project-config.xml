@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="BuildStepExecutionPolicyCheck" uuid="fdeb9d1f-cac5-4eab-8d4f-cfe7db09058c" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Composite+Composite+Composite+Regular+Regular</name>
+  <parameters />
+  <cleanup />
+</project>
+

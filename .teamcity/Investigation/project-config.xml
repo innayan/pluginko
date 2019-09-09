@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="dd358d10-33d6-4658-a6d9-316b3c2aa1f5" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Investigation</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_25" type="buildtype-graphs.order">
+      <parameters>
+        <param name="order" value="_Root:TestCount,_Root:SuccessRate,_Root:VisibleArtifactsSize,_Root:InspectionStats,_Root:TimeSpentInQueue,_Root:BuildDurationNetTime,_Root:CodeCoverage,_Root:MaxTimeToFixTestGraph" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_4" type="project-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (all stages)",
+    "sourceBuildTypeId": "Investigation_InvestigationAssign",
+    "key": "BuildDuration"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

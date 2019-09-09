@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9fb72a39-fb3e-48fc-9355-4fdc35ae91fc" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>from metarunner2</name>
+  <description>Build configuration created from meta-runner IdeaTool_ForMetarunner1</description>
+  <settings ref="IdeaTool_TemplateFromConfiguration">
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

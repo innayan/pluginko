@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="95f07840-2bc1-457b-9a12-bbca5bac2293" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>TW55974</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_7" type="JetBrains.SharedResources">
+      <parameters>
+        <param name="enabled" value="false" />
+        <param name="name" value="TW55REsource1" />
+        <param name="quota" value="2" />
+        <param name="type" value="quoted" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

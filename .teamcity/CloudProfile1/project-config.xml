@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="4314241b-b4f9-4c00-bf0e-c70faf1ff31c" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Cloud profile1</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_33" type="CloudImage">
+      <parameters>
+        <param name="agent_pool_id" value="-2" />
+        <param name="amazon-id" value="fleet" />
+        <param name="ebs-optimized" value="false" />
+        <param name="image-instances-limit" value="3" />
+        <param name="image-name-prefix" value="Fleet" />
+        <param name="instance-type" value="" />
+        <param name="profileId" value="amazon-7" />
+        <param name="security-group-ids" value="" />
+        <param name="source-id" value="Fleet" />
+        <param name="spot-fleet-config"><![CDATA[{
+  "IamFleetRole": "arn:aws:iam::913206223978:role/aws-ec2-spot-fleet-tagging-role",
+  "AllocationStrategy": "lowestPrice",
+  "TargetCapacity": 1,
+  "SpotPrice": "0.185",
+  "ValidFrom": "2019-05-17T12:52:37Z",
+  "ValidUntil": "2020-05-17T12:52:37Z",
+  "TerminateInstancesWithExpiration": true,
+  "LaunchSpecifications": [
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "c3.large",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.12",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "t3a.medium",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.0408",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "t3.medium",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.0456",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "t2.medium",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.05",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "t3.large",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.0907",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "t2.large",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.1008",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "c4.large",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.113",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "m3.large",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.146",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    },
+    {
+      "ImageId": "ami-050362c39e71f7b15",
+      "InstanceType": "r3.large",
+      "SubnetId": "subnet-17f8f17c",
+      "KeyName": "dtretyakov",
+      "SpotPrice": "0.185",
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": {
+            "DeleteOnTermination": true,
+            "VolumeType": "gp2",
+            "VolumeSize": 8,
+            "SnapshotId": "snap-0e9d12e5c886b86d6"
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "request",
+  "InstancePoolsToUseCount": 11
+}]]></param>
+        <param name="use-spot-instances" value="false" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_35" type="CloudImage">
+      <parameters>
+        <param name="agent_pool_id" value="-2" />
+        <param name="amazon-id" value="ami-00d2e181f3135ae07" />
+        <param name="ebs-optimized" value="false" />
+        <param name="instance-type" value="c5.large" />
+        <param name="profileId" value="amazon-7" />
+        <param name="security-group-ids" value="sg-904db8ff," />
+        <param name="source-id" value="ami-00d2e181f3135ae07" />
+        <param name="spot-instance-price" value="0.001" />
+        <param name="subnet-id" value="subnet-17f8f17c" />
+        <param name="use-spot-instances" value="true" />
+      </parameters>
+    </extension>
+    <extension id="amazon-7" type="CloudProfile">
+      <parameters>
+        <param name="agentPushPreset" value="" />
+        <param name="cloud-code" value="amazon" />
+        <param name="description" value="" />
+        <param name="enabled" value="true" />
+        <param name="max-running-instances" value="4" />
+        <param name="name" value="EC2 spot instance" />
+        <param name="next-hour" value="" />
+        <param name="not-checked" value="" />
+        <param name="profileId" value="amazon-7" />
+        <param name="profileServerUrl" value="" />
+        <param name="region" value="eu-west-1" />
+        <param name="secure:access-id" value="credentialsJSON:19725a32-1ccf-4838-a6c9-cdf0804593e6" />
+        <param name="secure:secret-key" value="credentialsJSON:b119f29b-deae-4154-938d-06a89948c17b" />
+        <param name="system.cloud.profile_id" value="amazon-7" />
+        <param name="terminate-idle-time" value="30" />
+        <param name="total-work-time" value="" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9b37e06c-6d57-4131-81e0-8cd325459c66" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Build Step Execution Policy check</name>
+  <parameters />
+  <cleanup />
+</project>
+

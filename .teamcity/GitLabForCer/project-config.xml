@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b4ac3680-e44d-4a07-a934-319b8e55cf1c" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>GitLabForCer</name>
+  <parameters />
+  <cleanup />
+</project>
+

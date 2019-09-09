@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c8c1be01-6170-46bf-b00d-9e9b8c0bdc6d" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>XSS</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_21" type="JetBrains.SharedResources">
+      <parameters>
+        <param name="name" value="ee" />
+        <param name="quota" value="-1" />
+        <param name="type" value="quoted" />
+      </parameters>
+    </extension>
+    <extension id="repository-nuget-test" type="PackageRepository">
+      <parameters>
+        <param name="description" value="test" />
+        <param name="name" value="test" />
+        <param name="type" value="nuget" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

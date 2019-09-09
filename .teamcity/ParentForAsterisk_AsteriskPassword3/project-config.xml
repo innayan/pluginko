@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="ParentForAsterisk" uuid="f6549d6c-613b-4fa9-80ed-65cef6096782" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Asterisk password3</name>
+  <parameters />
+  <cleanup />
+</project>
+

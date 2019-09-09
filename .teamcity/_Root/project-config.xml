@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="faf9c3f8-5528-4ef3-b5a6-cb2ef2961246" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>&lt;Root project&gt;</name>
+  <description>Contains all other projects</description>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_1" type="ReportTab">
+      <parameters>
+        <param name="startPage" value="coverage.zip!index.html" />
+        <param name="title" value="Code Coverage" />
+        <param name="type" value="BuildReportTab" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_15" type="CloudIntegration">
+      <parameters>
+        <param name="AllowOverride" value="false" />
+        <param name="SubprojectsEnabled" value="false" />
+        <param name="enabled" value="false" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_34" type="sesIntegration">
+      <parameters>
+        <param name="aws.access.key.id" value="AKIAI3RNUFFENIFKUFHA" />
+        <param name="aws.credentials.type" value="aws.access.keys" />
+        <param name="aws.region.name" value="us-east-1" />
+        <param name="aws.sesIntegration.accountId" value="172801717669" />
+        <param name="aws.sesIntegration.enabled" value="true" />
+        <param name="aws.sesIntegration.queueName" value="teamcity-ses-nonprod-ses-queue" />
+        <param name="projectExtId" value="_Root" />
+        <param name="secure:aws.secret.access.key" value="credentialsJSON:c512024a-edd9-4c28-b372-8b9306497b9f" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_50" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="rootId" value="HttpsGithubComInnayanPluginko" />
+        <param name="showChanges" value="false" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup>
+    <options>
+      <option name="preventDependenciesArtifactsFromCleanup" value="true" />
+    </options>
+  </cleanup>
+</project>
+

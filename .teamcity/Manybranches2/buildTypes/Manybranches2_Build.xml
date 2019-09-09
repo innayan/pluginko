@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="2e4697c0-108b-456c-9bb2-13da4493fea4" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>CrivoBuild</name>
+  <description />
+  <settings ref="Manybranches2_BranchTemplate">
+    <disabled-settings>
+      <setting-ref ref="ARTIFACT_DEPENDENCY_6" />
+    </disabled-settings>
+    <parameters>
+      <param name="build.branch" value="branch2" />
+    </parameters>
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_6" sourceBuildTypeId="Manybranches1_Build4" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="**.*" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

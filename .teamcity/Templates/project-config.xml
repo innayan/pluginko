@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="02cc3ffd-2beb-4b37-9074-f345e3bfbe0f" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Templates</name>
+  <parameters />
+  <project-extensions>
+    <extension id="amazon-1" type="CloudProfile">
+      <parameters>
+        <param name="agentPushPreset" value="" />
+        <param name="cloud-code" value="amazon" />
+        <param name="description" value="" />
+        <param name="enabled" value="false" />
+        <param name="max-running-instances" value="" />
+        <param name="name" value="cloud" />
+        <param name="next-hour" value="" />
+        <param name="not-checked" value="" />
+        <param name="profileId" value="amazon-1" />
+        <param name="profileServerUrl" value="" />
+        <param name="region" value="eu-west-3" />
+        <param name="secure:access-id" value="credentialsJSON:19725a32-1ccf-4838-a6c9-cdf0804593e6" />
+        <param name="secure:secret-key" value="credentialsJSON:b119f29b-deae-4154-938d-06a89948c17b" />
+        <param name="terminate-idle-time" value="30" />
+        <param name="total-work-time" value="" />
+        <param name="user-script" value="" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="IdeaTool" uuid="0f3d9f1b-535e-4bd9-89ca-7394651e4734" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Nunit</name>
+  <parameters />
+  <cleanup />
+</project>
+

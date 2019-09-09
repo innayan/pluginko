@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7bcb2a48-ffad-4bab-ae49-edeb1a8e3af7" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Snapshot with branches</name>
+  <parameters />
+  <cleanup />
+</project>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7fe66fbd-6097-476e-8431-f055cce671e6" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>for_dependency</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/*.*" />
+    </options>
+    <parameters>
+      <param name="masss" value="mas" />
+    </parameters>
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_8" sourceBuildTypeId="Jacoco_Jacoco1" cleanDestination="false">
+        <revisionRule name="lastFinished" revision="latest.lastFinished" />
+        <artifact sourcePath="Update/ProScheduler_Update_3.1.23.10_[%masss%].sql" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="329dfec2-e35e-4f25-90a0-32a19a282925" type="svn" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>https://localhost:8443/svn/test1</name>
+  <param name="externals-mode" value="externals-none" />
+  <param name="labelingMessage" value="Labeled automatically by TeamCity" />
+  <param name="labelingPatterns" value="trunk=&gt;tags" />
+  <param name="secure:svn-password" value="credentialsJSON:accc13e8-c8f9-4f30-a694-dbb1332fbba6" />
+  <param name="svn-config-directory" value="C:\Users\Inna.Yankelevich\AppData\Roaming\Subversion" />
+  <param name="svn-use-default-config-directory" value="true" />
+  <param name="url" value="https://localhost:8443/svn/test1" />
+  <param name="user" value="longpass" />
+  <param name="working-copy-format" value="1.8" />
+</vcs-root>
+

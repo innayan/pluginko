@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="91724a33-e33f-4077-9214-9b642fef4961" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Artifact3</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="build.xml&#xA;**/*.html" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_36" />
+      <setting-ref ref="TRIGGER_13" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_144" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo test" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Vs1_SvnHttpsLocalhost8443svnJavaEclipse" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_13" type="schedulingTrigger">
+        <parameters>
+          <param name="cronExpression_dm" value="*" />
+          <param name="cronExpression_dw" value="?" />
+          <param name="cronExpression_hour" value="*" />
+          <param name="cronExpression_min" value="*" />
+          <param name="cronExpression_month" value="*" />
+          <param name="cronExpression_sec" value="0,30" />
+          <param name="cronExpression_year" value="*" />
+          <param name="dayOfWeek" value="Sunday" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="hour" value="12" />
+          <param name="minute" value="0" />
+          <param name="promoteWatchedBuild" value="true" />
+          <param name="revisionRule" value="lastFinished" />
+          <param name="revisionRuleBuildBranch" value="&lt;default&gt;" />
+          <param name="schedulingPolicy" value="cron" />
+          <param name="timezone" value="SERVER" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_36" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="contains" />
+          <param name="buildFailureOnMessage.messagePattern" value="build" />
+          <param name="buildFailureOnMessage.outputText" value="Failure" />
+          <param name="buildFailureOnMessage.reverse" value="false" />
+        </parameters>
+      </extension>
+      <extension id="KEEP_RULE_3" type="keepRules">
+        <parameters>
+          <param name="keepData.1.artifactsPatterns" value="+:**/qqq.html" />
+          <param name="keepData.1.type" value="artifacts" />
+          <param name="keepData.2.type" value="history" />
+          <param name="keepData.3.type" value="statistics" />
+          <param name="limit.buildsCount" value="5" />
+          <param name="limit.type" value="keepLastNBuilds" />
+          <param name="preserveArtifacts" value="false" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+      <extension id="KEEP_RULE_4" type="keepRules">
+        <parameters>
+          <param name="keepData.1.artifactsPatterns" value="very long name for the artifat name to check the behavior.html" />
+          <param name="keepData.1.type" value="artifacts" />
+          <param name="keepData.2.type" value="history" />
+          <param name="keepData.3.type" value="statistics" />
+          <param name="limit.buildsCount" value="5" />
+          <param name="limit.type" value="keepLastNBuilds" />
+          <param name="preserveArtifacts" value="false" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+      <extension id="KEEP_RULE_6" type="keepRules">
+        <parameters>
+          <param name="keepData.1.artifactsPatterns" value="**/aa*" />
+          <param name="keepData.1.type" value="artifacts" />
+          <param name="keepData.2.type" value="history" />
+          <param name="keepData.3.type" value="statistics" />
+          <param name="limit.buildsCount" value="5" />
+          <param name="limit.type" value="keepLastNBuilds" />
+          <param name="preserveArtifacts" value="true" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+      <extension id="KEEP_RULE_7" type="keepRules">
+        <parameters>
+          <param name="keepData.1.artifactsPatterns"><![CDATA[+**/*.*
+-:qqq.html]]></param>
+          <param name="keepData.1.type" value="artifacts" />
+          <param name="keepData.2.type" value="history" />
+          <param name="keepData.3.type" value="statistics" />
+          <param name="limit.buildsCount" value="5" />
+          <param name="limit.type" value="keepLastNBuilds" />
+          <param name="preserveArtifacts" value="false" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+      <extension id="KEEP_RULE_8" type="keepRules">
+        <parameters>
+          <param name="keepData.1.type" value="history" />
+          <param name="keepData.2.type" value="statistics" />
+          <param name="limit.buildsCount" value="5" />
+          <param name="limit.type" value="keepLastNBuilds" />
+          <param name="preserveArtifacts" value="true" />
+          <param name="ruleDisabled" value="false" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="47d85712-893c-4304-b1dc-444a13336bc7" type="perforce" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>er</name>
+  <param name="client-mapping" value="//depot/... //team-city-agent/..." />
+  <param name="p4-exe" value="p4" />
+  <param name="port" value="unit-431.labs.intellij.net:1666" />
+  <param name="use-client" value="false" />
+  <param name="workspace-options"><![CDATA[Options:        noallwrite clobber nocompress unlocked nomodtime rmdir
+Host:           %teamcity.agent.hostname%
+SubmitOptions:  revertunchanged
+LineEnd:        local]]></param>
+</vcs-root>
+

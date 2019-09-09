@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="08a5e2c6-3175-45f4-bc3f-679cd86b5e96" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>long_config</name>
+  <description />
+  <settings ref="Proj_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_123456_LongTem_2">
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

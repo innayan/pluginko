@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="80d5bc8a-5c51-42a6-bae9-c2cdf65affb3" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>FreeDiskSpace</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="build.vcs.number.AAA_someOtherId" value="4" />
+      <param name="build.vcs.number.BBBB_someOtherId" value="rr" />
+      <param name="build.vcs.number.CCC_someOtherId" value="2" />
+      <param name="vcsroot.AAAA_sometext.url" value="r" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_43" name="" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<project default="build" name='Ant test' >
+  <target name="build">
+    <echo message="##teamcity[compilationStarted compiler='msbuild' flowId='msbuild']" />
+    <echo message="##teamcity[message text='error between compilation block' errorDetails='this is the error detail message between compilation block' status='ERROR' flowId='msbuild']" />
+    <echo message="##teamcity[compilationFinished compiler='msbuild' flowId='msbuild']" />
+  </target>
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_36" name="" type="simpleRunner">
+        <parameters>
+          <param name="org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource" value="Job configuration" />
+          <param name="org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource" value="Job configuration" />
+          <param name="org.jfrog.artifactory.selectedDeployableServer.useSpecs" value="false" />
+          <param name="script.content"><![CDATA[echo Here is my first line
+echo %build.vcs.number.XXXX% 
+%teamcity.build.vcs.branch.XXXX%
+echo %vcsroot.AAAA_sometext.url%
+echo %vcsroot.XXXX.url%
+echo Here is my second line
+echo Here is my third line]]></param>
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_37" name="New build step" type="simpleRunner">
+        <parameters>
+          <param name="org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource" value="Job configuration" />
+          <param name="org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource" value="Job configuration" />
+          <param name="org.jfrog.artifactory.selectedDeployableServer.useSpecs" value="false" />
+          <param name="script.content"><![CDATA[echo %build.vcs.number.BBBB_someOtherId%
+echo %system.build.vcs.number.XXXX%
+echo %build.vcs.number.XXXX%%build.vcs.number.XXXX%]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="XXXX" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="jetbrains.agent.free.space" type="jetbrains.agent.free.space">
+        <parameters>
+          <param name="free-space-fail-start" value="true" />
+          <param name="free-space-work" value="30gb" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

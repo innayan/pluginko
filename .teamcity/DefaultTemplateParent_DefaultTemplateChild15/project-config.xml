@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="DefaultTemplateParent" uuid="ad743f7c-e23e-4f18-9e50-a8ec1750baf0" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Default Template Child</name>
+  <parameters />
+  <cleanup />
+</project>
+

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e7eab657-1331-46c8-b4c3-6fb57eba3b3b" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>For cleanup 2.0</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_36" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Artifacts Publishing Time",
+    "key": "buildStageDuration:artifactsPublishing"
+  },
+  {
+    "type": "valueType",
+    "title": "Artifacts Size",
+    "key": "VisibleArtifactsSize"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title1" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_38" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "firstStepPreparation",
+    "key": "buildStageDuration:firstStepPreparation"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title2" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_39" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Artifacts Publishing Time",
+    "key": "buildStageDuration:artifactsPublishing"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title3" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_40" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (excluding Checkout Time)",
+    "key": "BuildDurationNetTime"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title4" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_41" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Success Rate",
+    "key": "SuccessRate"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title5" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_42" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (all stages)",
+    "key": "BuildDuration"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title6" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_43" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (excluding Checkout Time)",
+    "key": "BuildDurationNetTime"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title7" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_44" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "buildStepRUNNER_144",
+    "key": "buildStageDuration:buildStepRUNNER_144"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title8" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_45" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (excluding Checkout Time)",
+    "key": "BuildDurationNetTime"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title9" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_46" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (excluding Checkout Time)",
+    "key": "BuildDurationNetTime"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title898989" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_47" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Checkout Time",
+    "key": "buildStageDuration:sourcesUpdate"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

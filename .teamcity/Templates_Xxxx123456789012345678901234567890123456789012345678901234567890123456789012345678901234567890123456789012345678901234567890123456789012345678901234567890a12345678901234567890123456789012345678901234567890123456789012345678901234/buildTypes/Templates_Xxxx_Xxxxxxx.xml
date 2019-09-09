@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f06b187f-c027-4bfc-af60-07a033a30ce5" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Xxxxxxx</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_7" name="uuuuuu" type="cargo-deploy-runner">
+        <parameters>
+          <param name="jetbrains.buildServer.deployer.container.type" value="tomcat8x" />
+          <param name="jetbrains.buildServer.deployer.sourcePath" value="iii" />
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="ooooo" />
+          <param name="jetbrains.buildServer.deployer.username" value="ooo" />
+          <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:8258f03b-31bd-49f6-81ed-c03716cb56b0" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

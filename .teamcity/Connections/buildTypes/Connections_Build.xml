@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="eae0d25b-10bd-4af1-8392-05468890421e" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Build1</name>
+  <description>123</description>
+  <settings>
+    <options>
+      <option name="artifactRules" value="**" />
+      <option name="checkoutMode" value="MANUAL" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_48" />
+      <setting-ref ref="vcsTrigger" />
+    </disabled-settings>
+    <parameters>
+      <param name="xxx" value="credentialsJSON:70ba619d-522d-42c2-b1e6-fb55b5aac70a" spec="password display='normal'" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_48" name="" type="Maven2">
+        <parameters>
+          <param name="goals" value="package" />
+          <param name="localRepoScope" value="mavenDefault" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_50" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo xxxx" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Connections_SvnHttpsLocalhost8443svnJavaEclipseTrunkJavaEclipse" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_8" type="xml-report-plugin">
+        <parameters>
+          <param name="xmlReportParsing.reportDirs" value="**/*.xml" />
+          <param name="xmlReportParsing.reportType" value="junit" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

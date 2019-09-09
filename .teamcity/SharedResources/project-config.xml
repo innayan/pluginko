@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" archived="true" uuid="4a4d0e07-f468-4de2-aec1-904ec600cad5" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Shared Resources</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_17" type="JetBrains.SharedResources">
+      <parameters>
+        <param name="enabled" value="true" />
+        <param name="id" value="PROJECT_EXT_17" />
+        <param name="name" value="Test" />
+        <param name="type" value="custom" />
+        <param name="values"><![CDATA[A<b>'"&lt;'/>"/><script>alert(93847);</script>"
+A<b>'"&lt;'/>"/><script>alert(123);</script>"]]></param>
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

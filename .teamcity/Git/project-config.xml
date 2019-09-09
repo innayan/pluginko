@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="a4f8d2ab-5632-4c27-a360-b8c7946d141c" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Git</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_6" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="6bc69d2ab202e3b7cac8" />
+        <param name="defaultTokenScope" value="public_repo,repo,repo:status,write:repo_hook" />
+        <param name="displayName" value="GitHub.com" />
+        <param name="gitHubUrl" value="https://github.com/" />
+        <param name="providerType" value="GitHub" />
+        <param name="secure:clientSecret" value="credentialsJSON:052c53c1-fc7b-4e82-876a-ca8814819c27" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="2a3c52d7-6402-44c5-9356-0bcf1b37a1cb" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>template with tools1</name>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_89" name="Net Inspections 2018.3.3" type="dotnet-tools-inspectcode">
+        <parameters>
+          <param name="dotnet-tools-inspectcode.solution" value="xxx.sln" />
+          <param name="jetbrains.resharper-clt.clt-path" value="%teamcity.tool.jetbrains.resharper-clt.2018.3.3%" />
+          <param name="jetbrains.resharper-clt.platform" value="x64" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_90" name="Default net inspections" type="dotnet-tools-inspectcode">
+        <parameters>
+          <param name="dotnet-tools-inspectcode.solution" value="xxx.sln" />
+          <param name="jetbrains.resharper-clt.clt-path" value="%teamcity.tool.jetbrains.resharper-clt.DEFAULT%" />
+          <param name="jetbrains.resharper-clt.platform" value="x64" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</template>
+

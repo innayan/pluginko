@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e9fae2f4-7e0e-4ca0-b8c1-c8432dda2168" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>long template 3</name>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_long_step_id_1234567890_" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo test" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Proj_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_123456_LongVcsId" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</template>
+

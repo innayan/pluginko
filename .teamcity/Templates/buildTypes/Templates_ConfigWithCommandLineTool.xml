@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="44fbc1e7-12b3-461b-9319-5f289acaa796" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>config with command line tool</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="xxx" value="%teamcity.tool.jacoco.0.7.5%" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_95" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %teamcity.tool.jacoco.0.7.5%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements>
+      <exists id="RQ_10" name="teamcity.tool.jacoco.0.8.2" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

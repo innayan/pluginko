@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5afcc518-8b49-4cb7-add4-9d194f26a4bf" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Project with long name for side bar</name>
+  <parameters />
+  <cleanup />
+</project>
+

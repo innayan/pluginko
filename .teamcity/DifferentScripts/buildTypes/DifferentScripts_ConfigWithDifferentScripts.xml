@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="fedba22c-528d-428e-96d1-355f7b92a91e" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Config with different scripts</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_139" name="" type="Ant">
+        <parameters>
+          <param name="build-file"><![CDATA[<!-- Sample component test script for use with IBM Business Process Manager -->
+
+<project name="Automated Test Case Run" basedir="." default="run">
+
+    <!-- Modules, libraries, and test projects being tested -->
+    <property name="module1" value="HelloWorldMediation" />
+    <property name="module2" value="HelloService" />
+    <property name="library1" value="HelloWorldLibrary" />
+    <property name="testproject1" value="HelloWorldTest" />
+
+    <!-- Server properties -->
+    <property name="wps.home" value="C:/WID75_WTE/runtimes/bi_v75" />
+    <property name="wps.username" value="admin" />
+    <!-- Server password must be plain text. To avoid storing the server -->
+    <!-- password in a script, it can be stored in -->
+    <!-- the soap.client.props file instead. Refer to the password option -->
+    <!-- in the wsadmin command reference: -->
+    <!-- http://publib.boulder.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=/com.ibm.websphere.nd.multiplatform.doc/info/ae/ae/rxml_commandline.html -->
+    <property name="wps.password" value="admin" />
+    <property name="wps.node" value="qnode" />
+    <property name="wps.server" value="server1" />
+
+    <!-- Source code repository properties -->
+    <!-- This sample uses CVS. -->
+    <property name="cvs.username" value="cvsuser" />
+    <property name="cvs.password" value="cvspassword" />
+    <property name="cvs.root" value=":pserver:${cvs.username}:${cvs.password}@cvs:/cvs/repository" />
+    <property name="cvs.packageroot" value="testProjects" />
+    <property name="cvs.stream" value="HEAD" />
+
+    <!-- Build and test properties -->
+    <property name="test.servlet.url" value="http://localhost:9080/HelloWorldTestWeb/TestServlet?username=${wps.username}&password=${wps.password.encoded}" />
+    <property name="test.output.file" value="${build.output.dir}/TestOutput.xml" />
+    <property name="build.output.dir" value="C:/BuildOutputDir" />
+    <property name="build.working.dir" value="C:/BuildWorkingDir" />
+    <!-- The Workspace location can already exist or it can be the -->
+    <!-- destination of a source code repository extract -->
+    <property name="workspace.dir" value="D:\Workspaces\20100625cvs2/" />
+    <!-- Server password for the test servlet url. It can be plain text or -->
+    <!-- encoded. For password encoding, refer to -->
+    <!-- http://publib.boulder.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=/com.ibm.websphere.nd.doc/info/ae/ae/rsec_propfilepwdencoder.html -->
+    <property name="wps.password.encoded" value="{xor}PjsyNjE=" />
+
+    <!-- Ant task definitions -->
+    <taskdef name="wsStartApplication"
+             classname="com.ibm.websphere.ant.tasks.StartApplication" />
+    <taskdef name="wsStartServer"
+             classname="com.ibm.websphere.ant.tasks.StartServer" />
+    <taskdef name="wsStopServer"
+             classname="com.ibm.websphere.ant.tasks.StopServer" />
+    <taskdef name="wsInstallApp"
+             classname="com.ibm.websphere.ant.tasks.InstallApplication" />
+    <taskdef name="servicedeploy"
+             classname="com.ibm.websphere.ant.tasks.ServiceDeployTask" />
+    <taskdef name="wsUninstallApp"
+             classname="com.ibm.websphere.ant.tasks.UninstallApplication" />
+
+
+    <target name="checkout">
+        <cvs command="export -r ${cvs.stream} -d ${module1}"
+             package="${cvs.packageroot}/${module1}"
+             dest="${workspace.dir}"
+             cvsroot="${cvs.root}"
+             cvsrsh="ssh"
+             output="${build.output.dir}/${module1}.extract.log"
+             quiet="true" />
+        <cvs command="export -r ${cvs.stream} -d ${module2}"
+             package="${cvs.packageroot}/${module2}"
+             dest="${workspace.dir}"
+             cvsroot="${cvs.root}"
+             cvsrsh="ssh"
+             output="${build.output.dir}/${module2}.extract.log"
+             quiet="true" />
+        <cvs command="export -r ${cvs.stream} -d ${library1}"
+             package="${cvs.packageroot}/${library1}"
+             dest="${workspace.dir}"
+             cvsroot="${cvs.root}"
+             cvsrsh="ssh"
+             output="${build.output.dir}/${library1}.extract.log"
+             quiet="true" />
+        <cvs command="export -r ${cvs.stream} -d ${testproject1}"
+             package="${cvs.packageroot}/${testproject1}"
+             dest="${workspace.dir}"
+             cvsroot="${cvs.root}"
+             cvsrsh="ssh"
+             output="${build.output.dir}/${testproject1}.extract.log"
+             quiet="true" />
+    </target>
+
+    <target name="createPI">
+        <!-- This sample target is applicable when using CVS as the source -->
+        <!-- code repository. Excluding **/CVS/** means CVS metadata is not -->
+        <!-- included in the PI. If using another source code repository, -->
+        <!-- change or remove the exclude attribute. -->
+        <zip basedir="${workspace.dir}"
+             destfile="${build.output.dir}/${module1}.zip"
+             includes="${module1}/**/**/*, ${library1}/**/**/*"
+             excludes="**/CVS/**" />
+        <zip basedir="${workspace.dir}"
+             destfile="${build.output.dir}/${module2}.zip"
+             includes="${module2}/**/**/*, ${library1}/**/**/*"
+             excludes="**/CVS/**" />
+        <zip basedir="${workspace.dir}"
+             destfile="${build.output.dir}/${testproject1}.zip"
+             includes="${testproject1}/**/**/*"
+             excludes="**/CVS/**" />
+    </target>
+
+    <target name="generateEAR" depends="createPI">
+        <!-- The following link below provides a detailed description of the -->
+        <!-- serviceDeploy task: -->
+        <!-- http://publib.boulder.ibm.com/infocenter/dmndhelp/v7r0mx/index.jsp?topic=/com.ibm.websphere.wps.doc/doc/tdep_usingant.html -->
+        <servicedeploy scaModule="${build.output.dir}/${module1}.zip"
+                       workingDirectory="${build.working.dir}"
+                       outputApplication="${build.output.dir}/${module1}.ear"
+                       wasHome="${wps.home}"
+                       cleanStagingModules="true"
+                       keep="true" />
+        <servicedeploy scaModule="${build.output.dir}/${module2}.zip"
+                       workingDirectory="${build.working.dir}"
+                       outputApplication="${build.output.dir}/${module2}.ear"
+                       wasHome="${wps.home}"
+                       cleanStagingModules="true"
+                       keep="true" />
+        <servicedeploy scaModule="${build.output.dir}/${testproject1}.zip"
+                       workingDirectory="${build.working.dir}"
+                       outputApplication="${build.output.dir}/${testproject1}.ear"
+                       wasHome="${wps.home}"
+                       cleanStagingModules="true"
+                       keep="true"
+                       ignoreErrors="true" />
+    </target>
+
+    <target name="startServer">
+        <wsStartServer server="${wps.server}"
+                       logFile="${build.output.dir}/start.log"
+                       trace="false"
+                       failonerror="false" />
+    </target>
+
+    <target name="stopServer">
+        <wsStopServer server="${wps.server}"
+                      logFile="${build.output.dir}/stop.log"
+                      trace="false"
+                      username="${wps.username}"
+                      password="${wps.password}"
+                      failonerror="false" />
+    </target>
+
+    <target name="deploy" depends="generateEAR">
+        <!-- Install the apps on the server -->
+        <wsInstallApp ear="${build.output.dir}/${module1}.ear"
+                      user="${wps.username}"
+                      password="${wps.password}"
+                      failonerror="false" />
+        <wsInstallApp ear="${build.output.dir}/${module2}.ear"
+                      user="${wps.username}"
+                      password="${wps.password}"
+                      failonerror="false" />
+        <wsInstallApp ear="${build.output.dir}/${testproject1}.ear"
+                      user="${wps.username}"
+                      password="${wps.password}"
+                      failonerror="false" />
+        <!-- After installing the apps they must be explicitly started -->
+        <wsStartApplication application="${module1}App"
+                            server="server1"
+                            node="${wps.node}"
+                            user="${wps.username}"
+                            password="${wps.password}" />
+        <wsStartApplication application="${module2}App"
+                            server="server1"
+                            node="${wps.node}"
+                            user="${wps.username}"
+                            password="${wps.password}" />
+        <wsStartApplication application="${testproject1}App"
+                            server="server1"
+                            node="${wps.node}"
+                            user="${wps.username}"
+                            password="${wps.password}" />
+    </target>
+
+    <target name="undeploy">
+        <wsUninstallApp application="${module1}App"
+                        user="${wps.username}"
+                        password="${wps.password}"
+                        failonerror="false" />
+        <wsUninstallApp application="${module2}App"
+                        user="${wps.username}"
+                        password="${wps.password}"
+                        failonerror="false" />
+        <wsUninstallApp application="${testproject1}App"
+                        user="${wps.username}"
+                        password="${wps.password}"
+                        failonerror="false" />
+    </target>
+
+    <target name="runTest">
+        <!-- Run the test using the test project servlet -->
+        <get src="${test.servlet.url}" dest="${test.output.file}" />
+    </target>
+
+    <target name="run"
+            depends="checkout, startServer, deploy, runTest, undeploy, stopServer">
+        <!-- Display the results of the run -->
+        <loadfile srcFile="${test.output.file}"
+                  property="testoutput" />
+        <echo message="${testoutput}" />
+    </target>
+
+</project>]]></param>
+          <param name="build-file-path" value="build.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="use-custom-build-file" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_140" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[@echo off
+:: ---------------------------------------------------------------------
+:: TeamCity server start/stop script
+:: ---------------------------------------------------------------------
+:: Environment variables:
+::
+:: TEAMCITY_SERVER_MEM_OPTS   server memory options (JVM options)
+::
+:: TEAMCITY_SERVER_OPTS       additional server JVM options
+::
+:: TEAMCITY_DATA_PATH         path to TeamCity data directory
+::
+:: TEAMCITY_LOGS_PATH         path to TeamCity logs directory
+::
+:: TEAMCITY_PREPARE_SCRIPT    name of a script to execute before start/stop
+::
+:: TEAMCITY_PID_FILE_PATH     path to a file which will contain TeamCity process ID (if not specified file with name "teamcity.pid" will be created under logs directory)
+::
+:: TEAMCITY_RESTART_LIMIT     number of restart attempts on unexpected server exit (e.g. JVM crash), default is 3
+::
+:: ---------------------------------------------------------------------
+setlocal
+
+set OLD_DIR=%CD%
+set TEAMCITY_DATA_PATH=D:\Data2019
+set TEAMCITY_SERVER_MEM_OPTS=-Xmx8g
+
+cd /d %~dp0
+set BIN=%CD%
+
+:: If restarter was spawned in separate window clear the flag to close the console after server stop
+set EXIT_FLAG=/b
+
+if not "%TEAMCITY_SERVER_SCRIPT%" == "" goto teamcity_server_script_set
+  set "TEAMCITY_SERVER_SCRIPT=%BIN%\teamcity-server.bat"
+:teamcity_server_script_set
+set "TEAMCITY_SERVER_RESTARTER_SCRIPT=%BIN%\teamcity-server-restarter.bat"
+
+set EXIT_CODE=0
+
+if ""%1"" == ""start"" goto start
+if ""%1"" == ""run"" goto run
+if ""%1"" == ""start_internal"" goto start_internal
+if ""%1"" == ""service"" goto service
+goto default
+
+
+:start_internal
+set TEAMCITY_START_COMMAND=start
+set TEAMCITY_RESTARTER_SILENT=1
+:: close window on server shutdown
+set EXIT_FLAG=
+call:do_cycle %*
+goto:exit
+
+:run
+set TEAMCITY_START_COMMAND=run
+call:do_cycle %*
+goto:exit
+
+:start
+call:spawn_self %*
+goto:exit
+
+:service
+if not "%TEAMCITY_LOGS_PATH%" == "" goto service_logs_path_set
+set "TEAMCITY_LOGS_PATH=%BIN%\..\logs"
+
+:service_logs_path_set
+set "TEAMCITY_SERVICE_LOGS_PATH=%TEAMCITY_LOGS_PATH%"
+if exist "%TEAMCITY_SERVICE_LOGS_PATH%" goto service_logs_done
+mkdir "%TEAMCITY_SERVICE_LOGS_PATH%"
+
+:service_logs_done
+shift
+SET TEAMCITY_SERVICE_COMMAND=%1
+IF NOT "%1"=="install" IF NOT "%1"=="delete" goto service_usage_error
+shift
+TeamCityService.exe %TEAMCITY_SERVICE_COMMAND% /settings=..\conf\teamcity-server-service.xml "/logfile=%TEAMCITY_SERVICE_LOGS_PATH%\teamcity-winservice.log" %*
+IF NOT ERRORLEVEL 1 GOTO service_succeeded
+:: service failed to complete here
+IF "%TEAMCITY_SERVICE_COMMAND%" == "install" ECHO Call teamcity-server.bat usage for usage details
+IF "%TEAMCITY_SERVICE_COMMAND%" == "install" ECHO Service logs are in %TEAMCITY_SERVICE_LOGS_PATH%\teamcity-winservice.log
+SET TEAMCITY_SERVICE_COMMAND=
+set EXIT_CODE=1
+goto:exit
+
+:: service command call succeeded
+:service_succeeded
+IF "%TEAMCITY_SERVICE_COMMAND%" == "install" ECHO Service logs are in %TEAMCITY_SERVICE_LOGS_PATH%\teamcity-winservice.log
+SET TEAMCITY_SERVICE_COMMAND=
+set EXIT_CODE=0
+goto:exit
+
+:service_usage_error
+echo.
+echo Supported "service" command invocations:
+echo service install /runAsSystem
+echo   Installs the TeamCity server as a Windows service and uses the LOCAL_SYSTEM account.
+echo service install /user=^<username^> [/domain=^<domain^>] /password=^<password^>
+echo   Installs the TeamCity server as a Windows service under the specified user account.
+echo service delete
+echo   Removes a previously installed TeamCity server service.
+echo.
+set EXIT_CODE=1
+goto:exit]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_142" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[param (
+	[parameter( Mandatory = $False, ValueFromPipeline = $True )]
+	[string] $text
+)
+ 
+if ( $text -eq "/?" ) {
+	Clear-Host
+	Write-Host "`nCapsLockIcon.ps1,  Version 1.00 for Windows" 	Write-Host "CapsLock key indicator in the System tray`n" 	Write-Host "Usage:`t. 'CapsLockIcon.ps1' [text]`n"
+	Write-Host "Where:`ttext`tis the text on the indicator"
+	Write-Host "`t`t(default: `"C`"; maximum length: 2)`n"
+	Write-Host "Credit:`tCode to dynamically generate icons by Joshua Flanagan"
+	Write-Host "`thttps://www.codeproject.com/Articles/7122/Dynamically-Generating-Icons-safely`n"
+	Write-Host "Written by Rob van der Woude"
+	Write-Host "https://www.robvanderwoude.com`n"
+	exit
+} else {
+	# Remove whitespace and special characters
+	$text = $text -replace '\W', ''
+	# Use no more than 2 characters
+	if ( $text.Length -gt 2 )
+	{
+		$text = $text.Substring( 0, 2 )
+	}
+}
+# Use default in case no valid text was supplied
+if ( [string]::IsNullOrWhiteSpace( $text ) ) {
+	$text = "C"
+}
+ 
+[void] [System.Reflection.Assembly]::LoadWithPartialName( "System.Drawing" )
+[void] [System.Reflection.Assembly]::LoadWithPartialName( "System.Windows.Forms" )
+ 
+# Create bitmap
+$bitmap = [System.Drawing.Bitmap]::new( 16, 16 )
+# Define font
+$fontfamily = [System.Drawing.FontFamily]::GenericSansSerif
+$fontstyle = [System.Drawing.FontStyle]::Bold
+$font = [System.Drawing.Font]::new( $fontfamily, 8, $fontstyle )
+# Create graphic from bitmap
+$graphic = [System.Drawing.Graphics]::FromImage( $bitmap )
+# Create a circle in the graphic, fill this circle with color
+$blackbrush = [System.Drawing.Brushes]::Black
+$redbrush = [System.Drawing.Brushes]::Red
+$graphic.FillEllipse( $redbrush, 0, 0, 16, 16 )
+# Center text in circle
+$textsize = $graphic.MeasureString( $text, $font )
+# Resize font if text is too large to fit in icon
+if ( $textsize.Width -gt 14 ) {
+	$font = [System.Drawing.Font]::new( $fontfamily, $font.Size * 0.8, $fontstyle )
+	$textsize = $graphic.MeasureString( $text, $font )
+}
+$x = [Math]::Max( 0, [Math]::Floor( ( $bitmap.Width - $textsize.Width ) / 2 ) )
+$y = [Math]::Max( 0, [Math]::Ceiling( ( $bitmap.Height - $textsize.Height ) / 2 ) )
+$stringformat = [System.Drawing.StringFormat]::GenericDefault
+$graphic.DrawString( $text, $font, $blackbrush, $x, $y, $stringformat )
+# Create icon from graphic
+$icon = [System.Drawing.Icon]::FromHandle( $bitmap.GetHicon( ) )
+# Cleanup
+$graphic.Dispose( )
+$bitmap.Dispose( )
+ 
+# Create new System Tray icon
+[void] [System.Reflection.Assembly]::LoadWithPartialName( "System.Windows.Forms" )
+$notifyIcon = New-Object System.Windows.Forms.NotifyIcon
+$notifyIcon.Icon = $icon
+ 
+# Explain how to break free from the endless loop
+Write-Host "`nPress any key to stop monitoring CapsLock . . .  " -NoNewline
+ 
+# Monitor CapsLock until a key is pressed in this console
+while ( !$Host.UI.RawUI.KeyAvailable ) {
+	Start-Sleep -Seconds 1
+	# Show System Tray icon only if CapsLock is ON
+	$notifyIcon.Visible = [System.Windows.Forms.Control]::IsKeyLocked( [System.Windows.Forms.Keys]::CapsLock )
+}
+ 
+# Remove the key from the keyboard buffer . . .
+$key = $Host.UI.RawUI.ReadKey( )
+# . . .  and wipe it from the screen
+Write-Host "`b `n"
+ 
+# Cleanup
+$notifyIcon.Visible = $False
+# Only if variable "$icon" is of type "Icon" it should be disposed of
+if ( $icon.GetType( ) -eq [System.Drawing.Icon] ) {
+	$icon.Dispose( )
+}
+$notifyIcon.Dispose( )]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_143" name="" type="DockerCommand">
+        <parameters>
+          <param name="command.args" value="--pull" />
+          <param name="docker.command.type" value="build" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.content"><![CDATA[FROM ubuntu
+MAINTAINER Kimbro Staken
+
+RUN apt-get install -y python-software-properties python
+RUN add-apt-repository ppa:chris-lea/node.js
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list RUN apt-get update RUN apt-get install -y nodejs git
+RUN npm install -g docpad@6.44
+
+CMD ["/bin/bash"]]]></param>
+          <param name="dockerfile.source" value="CONTENT" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

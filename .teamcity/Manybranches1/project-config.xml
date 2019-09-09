@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b55b9778-5f6b-4ebf-85f6-529037bd741c" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Manybranches1</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_26" type="project-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (all stages)",
+    "sourceBuildTypeId": "Manybranches1_Build4",
+    "key": "BuildDuration"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_27" type="project-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Artifacts Size",
+    "sourceBuildTypeId": "Manybranches1_Build4",
+    "key": "VisibleArtifactsSize"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_28" type="project-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "buildFinishing",
+    "sourceBuildTypeId": "Manybranches1_Build4",
+    "key": "buildStageDuration:buildFinishing"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="buildFinishing" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_30" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Checkout Time",
+    "key": "buildStageDuration:sourcesUpdate"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="New chart title" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_31" type="buildtype-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Checkout Time",
+    "key": "buildStageDuration:sourcesUpdate"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="ty" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_32" type="project-graphs.order">
+      <parameters>
+        <param name="order" value="_Root:SuccessRate,_Root:TestCount,_Root:BuildDurationNetTime,_Root:TimeSpentInQueue,_Root:MaxTimeToFixTestGraph,PROJECT_EXT_27,PROJECT_EXT_28,PROJECT_EXT_26" />
+      </parameters>
+    </extension>
+    <extension id="vmw-1" type="CloudProfile">
+      <parameters>
+        <param name="agentPushPreset" value="" />
+        <param name="cloud-code" value="vmw" />
+        <param name="description" value="" />
+        <param name="enabled" value="false" />
+        <param name="helperFieldId" value="folder" />
+        <param name="helperFieldValue" value="group-v22" />
+        <param name="image" value="coreos-stable-1185.5.0" />
+        <param name="name" value="ddd" />
+        <param name="next-hour" value="" />
+        <param name="profileId" value="vmw-1" />
+        <param name="profileServerUrl" value="" />
+        <param name="secure:vmware_password" value="credentialsJSON:bdcff79e-36fe-46f1-aaea-6680197f5418" />
+        <param name="terminate-idle-time" value="30" />
+        <param name="total-work-time" value="" />
+        <param name="vmware_profile_instance_limit" value="" />
+        <param name="vmware_server_url" value="https://vCenter-srv.Labs.IntelliJ.Net:443/sdk" />
+        <param name="vmware_username" value="LABS\Inna.Yankelevich" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9b718230-5542-4e5d-92bc-84a42473fb1a" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Snapshot dependency</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings>
+      <vcs-entry-ref root-id="Xss_HttpsGithubComInnayanMyrepository" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="jetbrains.agent.free.space" type="jetbrains.agent.free.space/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(105);&lt;/script&gt;">
+        <parameters>
+          <param name="free-space-work" value="3gb" />
+        </parameters>
+      </extension>
+      <extension id="JetBrains.AssemblyInfo" type="JetBrains.AssemblyInfo">
+        <parameters>
+          <param name="assembly-format" value="&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(105);&lt;/script&gt;" />
+          <param name="file-format" value="e" />
+          <param name="info-format" value="e" />
+        </parameters>
+      </extension>
+      <extension id="swabra" type="swabra&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(104);&lt;/script&gt;">
+        <parameters>
+          <param name="swabra.enabled" value="&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(104);&lt;/script&gt;" />
+        </parameters>
+      </extension>
+      <extension id="InvestigationsAutoAssigner" type="InvestigationsAutoAssigner&quot;/&gt;/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(107);&lt;/script&gt; ">
+        <parameters>
+          <param name="defaultAssignee.username" value="&quot;/&gt;/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(107);&lt;/script&gt;" />
+          <param name="excludeAssignees.usernames" value="a" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_9" type="JetBrains.SharedResources&quot;/&gt;/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(107);&lt;/script&gt;">
+        <parameters />
+      </extension>
+      <extension id="BUILD_EXT_10" type="jb.nuget.auth&lt;script&gt;alert(155);&lt;/script&gt;">
+        <parameters>
+          <param name="nuget.auth.feed" value="&quot;test&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(101);&lt;/script&gt;&quot;" />
+          <param name="nuget.auth.username" value="&quot;test&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(101);&lt;/script&gt;&quot;" />
+          <param name="secure:nuget.auth.password" value="zxx4093c1daaff7313fd9f3026e328ed0beb7559823cb7b7f4a4bac8891c207716f2e7933167cb49d47bd6f5f9cd931b7c9" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_11" type="NuGetPackagesIndexer&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(155);&lt;/script&gt;">
+        <parameters>
+          <param name="feed" value="Xss/test" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_12" type="xml-report-plugin&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(156);&lt;/script&gt;">
+        <parameters>
+          <param name="xmlReportParsing.reportDirs&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(157);&lt;/script&gt;" value="gg" />
+          <param name="xmlReportParsing.reportType" value="ctest" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_13" type="BuildFailureOnMetric&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(155);&lt;/script&gt;">
+        <parameters>
+          <param name="anchorBuild" value="lastSuccessful" />
+          <param name="metricKey" value="CodeCoverageAbsCTotal" />
+          <param name="metricThreshold" value="1" />
+          <param name="metricUnits" value="metricUnitsDefault" />
+          <param name="moreOrLess" value="more" />
+          <param name="withBuildAnchor" value="false" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_14" type="JetBrains.SharedResources&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(165);&lt;/script&gt;">
+        <parameters>
+          <param name="locks-param&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(175);&lt;/script&gt;" value="ee readLock &quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(185);&lt;/script&gt;" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_11" sourceBuildTypeId="Xss_Config&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(176);&lt;/script&gt;" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="**/*1.*&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(176);&lt;/script&gt;" />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="Xss_Config&quot;/&gt;'/&gt;&lt;b&gt;aaaa&lt;script&gt;alert(176);&lt;/script&gt;">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

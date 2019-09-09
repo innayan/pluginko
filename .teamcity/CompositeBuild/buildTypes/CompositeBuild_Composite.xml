@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="55017462-d3e5-456f-84cb-4775a2576542" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Composite</name>
+  <description>composite build</description>
+  <settings>
+    <options>
+      <option name="buildConfigurationType" value="COMPOSITE" />
+    </options>
+    <parameters>
+      <param name="java_e" value="java_eclipse" />
+      <param name="te" value="te" />
+      <param name="test1" value="test" />
+      <param name="test2" value="test" />
+      <param name="test3" value="te" />
+      <param name="test5" value="4" />
+    </parameters>
+    <build-runners />
+    <vcs-settings>
+      <vcs-entry-ref root-id="GitJavaEclipse" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_28" type="commit-status-publisher">
+        <parameters>
+          <param name="publisherId" value="tfs" />
+          <param name="secure:accessToken" value="credentialsJSON:9268b754-4a25-487a-b713-bb6f9357e1d1" />
+          <param name="tfsAuthType" value="token" />
+          <param name="tfsServerUrl" value="g" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="CompositeBuild_A" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="%java_e%/%te%st*.txt&#xD;&#xA;" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_5" sourceBuildTypeId="CompositeBuild_B" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="java_eclipse/%test2%3.txt&#xD;&#xA;java_eclipse/%test2%4.txt" />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="CompositeBuild_A">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="run-build-on-the-same-agent" value="true" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="CompositeBuild_B">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

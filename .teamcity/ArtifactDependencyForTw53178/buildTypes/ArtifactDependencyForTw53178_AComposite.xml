@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="eab0def1-5685-4c0c-9cda-d3920f156f7f" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>AComposite</name>
+  <description>composite build</description>
+  <settings>
+    <options>
+      <option name="buildConfigurationType" value="COMPOSITE" />
+      <option name="showDependenciesChanges" value="true" />
+    </options>
+    <parameters>
+      <param name="java_e" value="java_eclipse" />
+      <param name="system.number" value="395" />
+      <param name="te" value="te" />
+      <param name="test1" value="test" />
+      <param name="test2" value="test" />
+      <param name="test3" value="te" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_17" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo aaa" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_24" name="" type="DockerCommand">
+        <parameters>
+          <param name="command.args" value="--pull --build-arg" />
+          <param name="docker.command.type" value="build" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="eee.dfff" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="ArtifactDependencyForTw53178_Aa" cleanDestination="false">
+        <revisionRule name="buildNumber" revision="lastPinned" />
+        <artifact sourcePath="%java_e%/%te%st*.txt&#xD;&#xA;" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_5" sourceBuildTypeId="ArtifactDependencyForTw53178_Ba" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" branch="refs/heads/bbbb" />
+        <artifact sourcePath="java_eclipse/*.xml&#xD;&#xA;" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d072e09a-311b-41ee-a746-16b6a423b358" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>A1</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="eee" value="xxx" />
+      <param name="param" value="" spec="checkbox display='normal' checkedValue='truea'" />
+    </parameters>
+    <build-runners order="RUNNER_11, RUNNER_9, RUNNER_10">
+      <runner id="RUNNER_11" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %eee%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_9" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo ##teamcity[setParameter name='eee' value='aaa']" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_10" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %eee%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

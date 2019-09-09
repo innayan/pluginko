@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="4b4e12f4-0147-48da-b4f0-68b6f67c9f4b" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>with meta with param</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_96" name="" type="Templates_MetaWithParameterTool">
+        <parameters>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="xxx" value="%teamcity.tool.jacoco.0.7.5%" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

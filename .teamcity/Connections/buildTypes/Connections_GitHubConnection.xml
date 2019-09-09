@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0cc652d6-84f4-4027-8edb-613372fb1601" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>GitHub connection</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="pass" value="credentialsJSON:cb7b32f2-9bb5-4fab-813e-bae83a2b295c" spec="password display='normal'" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_21" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo test" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Connections_HttpsGithubComInnayanGit2611" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_4" type="commit-status-publisher">
+        <parameters>
+          <param name="github_authentication_type" value="password" />
+          <param name="github_host" value="https://api.github.com" />
+          <param name="github_username" value="innayan" />
+          <param name="publisherId" value="githubStatusPublisher" />
+          <param name="secure:github_access_token" value="credentialsJSON:95089222-d0d7-473b-bba3-96360dc0f547" />
+          <param name="secure:github_password" value="credentialsJSON:8277aa23-db0f-4041-897a-38c9c7b84133" />
+          <param name="vcsRootId" value="Connections_HttpsGithubComInnayanGit2611" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

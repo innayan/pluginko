@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="AsterskPassword" uuid="250ba984-b9e5-4120-949d-cbbe255c2cd1" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>subpro full</name>
+  <parameters />
+  <cleanup />
+</project>
+

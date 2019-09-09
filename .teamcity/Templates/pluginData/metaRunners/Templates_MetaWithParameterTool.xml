@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta-runner name="meta with parameter tool">
+  <description>meta with parameter tool</description>
+  <settings>
+    <parameters>
+      <param name="xxx" value="%teamcity.tool.jacoco.0.7.5%" />
+    </parameters>
+    <build-runners>
+      <runner name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %teamcity.tool.jacoco.0.7.5%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <requirements />
+  </settings>
+</meta-runner>
+

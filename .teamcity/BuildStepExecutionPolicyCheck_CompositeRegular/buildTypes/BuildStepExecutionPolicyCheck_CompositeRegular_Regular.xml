@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="987aa242-e220-4458-8b93-8bd8192050a5" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Regular</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_98" name="Step1" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="ping 127.0.0.1 -n 60 &gt; nul" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_99" name="Step2" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="ping 127.0.0.1 -n 60 &gt; nul" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_100" name="Step3" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo executed1
+ping 127.0.0.1 -n 30 > nul
+echo executed]]></param>
+          <param name="teamcity.step.mode" value="execute_always" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

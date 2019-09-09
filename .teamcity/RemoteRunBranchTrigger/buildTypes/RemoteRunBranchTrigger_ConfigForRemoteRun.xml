@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="45d60da4-8e2f-431d-9d08-fdfba6c14cdb" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>config for remote run</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_13" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo test" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="RemoteRunBranchTrigger_HttpsGithubComInnayanGit2611aaaaaaaaaaaaaaaaaaaaaa" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="remoteRunOnBranch" type="remoteRunOnBranch">
+        <parameters>
+          <param name="branchy:jetbrains.git" value="pattern:jetbrains.git" />
+          <param name="pattern:jetbrains.git" value="refs/heads/new2" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+

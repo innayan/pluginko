@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="30e707e2-18dc-4991-929c-5bd3f8726fa4" paused="true" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>config with shared</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_15" type="JetBrains.SharedResources">
+        <parameters>
+          <param name="locks-param" value="Test readLock A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(123);&lt;/script&gt;&quot;" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

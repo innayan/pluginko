@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="ArchivedProject" archived="true" uuid="32587097-eb75-40d3-81e8-949e5e0c1294" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>archived subproj</name>
+  <parameters />
+  <cleanup />
+</project>
+

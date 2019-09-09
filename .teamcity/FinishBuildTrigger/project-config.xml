@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0c91c46d-e9a3-4125-a72b-e0426b20a0cc" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Finish Build trigger</name>
+  <parameters />
+  <cleanup>
+    <policy type="days" cleanup-level="HISTORY_ENTRY">
+      <parameters>
+        <param name="keepDays.count" value="100" />
+      </parameters>
+    </policy>
+    <policy type="builds" cleanup-level="ARTIFACTS">
+      <parameters>
+        <param name="artifactPatterns"><![CDATA[+:.teamcity/**
++:*]]></param>
+        <param name="keepBuilds.count" value="1" />
+      </parameters>
+    </policy>
+  </cleanup>
+</project>
+

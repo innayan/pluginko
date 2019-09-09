@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="71f2c3ab-9a82-4f5c-b335-8e0fbbbbf12d" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Different scripts</name>
+  <parameters />
+  <cleanup />
+</project>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="62720149-2a47-4caf-b3f1-7fe1cdd183fd" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Manybranches2</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_24" type="project-graphs">
+      <parameters>
+        <param name="format" value="text" />
+        <param name="series"><![CDATA[[
+  {
+    "type": "valueType",
+    "title": "Build Duration (all stages)",
+    "sourceBuildTypeId": "Manybranches2_Build3",
+    "key": "BuildDuration"
+  }
+]]]></param>
+        <param name="seriesTitle" value="Serie" />
+        <param name="title" value="Duration" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

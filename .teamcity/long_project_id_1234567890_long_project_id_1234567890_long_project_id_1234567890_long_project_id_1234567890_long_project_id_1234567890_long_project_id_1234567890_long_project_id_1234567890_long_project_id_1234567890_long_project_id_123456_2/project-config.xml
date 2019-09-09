@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_1234567890_long_project_id_12345678" uuid="817e5732-e3a8-4201-a33a-67949af7fccc" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>subpro</name>
+  <parameters />
+  <cleanup />
+</project>
+

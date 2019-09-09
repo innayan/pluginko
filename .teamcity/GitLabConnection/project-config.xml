@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f3e35e30-ddad-4636-a7c5-68309fe05e66" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>GitLab Connection</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_37" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="d9c8f06cd4d20cb7bf7f42d703379567d70999ec3334b9c990e7fc4e681710b3" />
+        <param name="displayName" value="GitLab CE/EE" />
+        <param name="gitLabUrl" value="http://tcqa-gitlab.labs.intellij.net" />
+        <param name="providerType" value="GitLabCEorEE" />
+        <param name="secure:clientSecret" value="credentialsJSON:46344d1e-e95e-41ec-8b9d-d445e648a414" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

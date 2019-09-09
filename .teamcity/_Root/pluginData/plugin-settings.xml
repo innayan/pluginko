@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <tools>
+    <default-versions>
+      <tool-version tool-type="maven" id="maven.3.3.3" />
+      <tool-version tool-type="jacoco" id="jacoco.0.8.4" />
+      <tool-version tool-type="JetBrains.dotCover.CommandLineTools" id="JetBrains.dotCover.CommandLineTools.2017.2.20170824.141024" />
+      <tool-version tool-type="intellij" id="intellij.ideaIU-teamcity-2017.3.5" />
+      <tool-version tool-type="NuGet.CommandLine" id="NuGet.CommandLine.4.9.3" />
+    </default-versions>
+  </tools>
+</settings>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta-runner name="for metarunner1">
+  <description>idea metaruuner 2</description>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner name="" type="JPS">
+        <parameters>
+          <param name="iprInfoRunParam" value="&lt;iprInfo path-to-ipr=&quot;&quot; should-load-iml=&quot;true&quot; should-load-run-configurations=&quot;false&quot; should-load-artifacts=&quot;false&quot; /&gt;" />
+          <param name="jvmArgs" value="-Xmx256m" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner name="" type="Inspection">
+        <parameters>
+          <param name="idea.app.home" value="%teamcity.tool.intellij.DEFAULT%" />
+          <param name="iprInfoRunParam" value="&lt;iprInfo path-to-ipr=&quot;&quot; should-load-iml=&quot;true&quot; should-load-run-configurations=&quot;false&quot; should-load-artifacts=&quot;false&quot; /&gt;" />
+          <param name="jvmArgs" value="-Xmx512m -XX:ReservedCodeCacheSize=240m" />
+          <param name="target.jdk.home" value="%env.JDK_18%" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <requirements />
+  </settings>
+</meta-runner>
+

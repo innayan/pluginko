@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b3f15a7b-22d8-4c61-ac51-4365c87f8e3b" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>mistakenly reuse builds after VCS root password changes</name>
+  <parameters />
+  <cleanup />
+</project>
+

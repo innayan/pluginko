@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="bf616b46-04e4-4b71-9b62-541c9c13c9cc" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>B</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="we" value="%dep.RedefineParam_A.eee%" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_12" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %dep.RedefineParam_A.eee%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="RedefineParam_A">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

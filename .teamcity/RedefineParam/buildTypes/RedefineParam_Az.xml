@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5c017421-b644-482f-9463-57dfbc8d4d11" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Az</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_10" />
+      <setting-ref ref="RUNNER_11" />
+    </disabled-settings>
+    <parameters>
+      <param name="param" value="false" spec="checkbox display='normal' checkedValue='true'" />
+    </parameters>
+    <build-runners order="RUNNER_11, RUNNER_9, RUNNER_10">
+      <runner id="RUNNER_11" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %eee%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_9" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo ##teamcity[setParameter name='eee' value='aaa']" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_10" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %eee%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

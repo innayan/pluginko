@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b3c7a18c-c3c7-4da1-b2f6-c608303b8f40" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>config55</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="AnyPython" value="C:\Python37\python.exe" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_85" name="" type="python">
+        <parameters>
+          <param name="bitness" value="*" />
+          <param name="python-exe" value="%AnyPython%" />
+          <param name="python-kind" value="*" />
+          <param name="python-script-code"><![CDATA[sys.stderr.write('Debug line:1\nDebug line:2')
+sys.exit(0)]]></param>
+          <param name="python-script-mode" value="code" />
+          <param name="python-ver" value="*" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

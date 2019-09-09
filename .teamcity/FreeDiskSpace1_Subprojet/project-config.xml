@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="FreeDiskSpace1" uuid="78d268e3-4d60-4c38-8698-c8019b9f09c1" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>subprojet</name>
+  <parameters />
+  <cleanup />
+</project>
+

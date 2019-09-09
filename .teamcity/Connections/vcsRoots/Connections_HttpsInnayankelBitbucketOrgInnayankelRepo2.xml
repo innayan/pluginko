@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0de0f464-c6f1-4301-9948-333d79c042a3" type="mercurial" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>https://innayankel@bitbucket.org/innayankel/repo-2/</name>
+  <param name="branchName" value="default" />
+  <param name="hgCommandPath" value="hg" />
+  <param name="repositoryPath" value="https://innayankel@bitbucket.org/innayankel/repo-2/" />
+  <param name="secure:password" value="" />
+  <param name="uncompressedTransfer" value="true" />
+  <param name="username" value="innayankel" />
+</vcs-root>
+

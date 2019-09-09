@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="4947a83b-12de-4c29-a1bb-c485b81b2c76" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Project with long ID (1)</name>
+  <parameters />
+  <cleanup />
+</project>
+

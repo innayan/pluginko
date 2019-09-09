@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="6ad6aa1c-7a73-4580-adb2-72681eb1b16b" type="svn" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>https://localhost:8443/svn/java_eclipse/</name>
+  <param name="externals-mode" value="externals-full" />
+  <param name="labelingMessage" value="Labeled automatically by TeamCity" />
+  <param name="labelingPatterns" value="trunk=&gt;tags" />
+  <param name="secure:svn-password" value="credentialsJSON:cf64f901-1cc2-4aeb-9775-1c551b68fe80" />
+  <param name="svn-config-directory" value="C:\Users\Inna.Yankelevich\AppData\Roaming\Subversion" />
+  <param name="svn-use-default-config-directory" value="true" />
+  <param name="teamcitySshKey" value="default teamcity key" />
+  <param name="url" value="https://localhost:8443/svn/java_eclipse/trunk/java_eclipse" />
+  <param name="user" value="admin" />
+  <param name="working-copy-format" value="1.8" />
+</vcs-root>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="ac2522b9-799c-4568-b93d-71935895d761" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Connections</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_23" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="38495661fe32ae5675cc" />
+        <param name="defaultTokenScope" value="public_repo,repo,repo:status,write:repo_hook" />
+        <param name="displayName" value="GitHub.com" />
+        <param name="gitHubUrl" value="https://github.com/" />
+        <param name="providerType" value="GitHub" />
+        <param name="secure:clientSecret" value="credentialsJSON:2bdbfe52-b733-4bde-9296-812e416772a4" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_9" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="jMJMGYBnA4w677HmLA" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:83a60bfa-4298-4c47-aaed-a06af373fa6c" />
+      </parameters>
+    </extension>
+    <extension id="amazon-2" type="CloudProfile">
+      <parameters>
+        <param name="agentPushPreset" value="" />
+        <param name="cloud-code" value="amazon" />
+        <param name="description" value="" />
+        <param name="enabled" value="false" />
+        <param name="max-running-instances" value="3" />
+        <param name="name" value="connection" />
+        <param name="next-hour" value="" />
+        <param name="not-checked" value="" />
+        <param name="profileId" value="amazon-2" />
+        <param name="profileServerUrl" value="" />
+        <param name="region" value="eu-west-1" />
+        <param name="secure:access-id" value="credentialsJSON:19725a32-1ccf-4838-a6c9-cdf0804593e6" />
+        <param name="secure:secret-key" value="credentialsJSON:b119f29b-deae-4154-938d-06a89948c17b" />
+        <param name="terminate-idle-time" value="30" />
+        <param name="total-work-time" value="" />
+        <param name="user-script" value="" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

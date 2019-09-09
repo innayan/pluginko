@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="444ada55-ea85-414a-a2f8-eeb447ce7f87" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Wrong checkout rules</name>
+  <parameters />
+  <cleanup />
+</project>
+

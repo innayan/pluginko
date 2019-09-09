@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5bfca5b3-2828-4bbf-896f-078a8a3a339d" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>5555</name>
+  <description />
+  <settings ref="Vvvv_Xxx">
+    <options>
+      <option name="artifactRules" value="888" />
+      <option name="publishArtifactCondition" value="ALWAYS" />
+    </options>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

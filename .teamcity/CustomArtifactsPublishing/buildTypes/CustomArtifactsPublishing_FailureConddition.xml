@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9f0fd115-2598-42e9-a279-f203e8c10c78" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Failure condition</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="java_eclipse\bbbbb =&gt; java_eclipse\bbbbb&#xA;java_eclipse\bin =&gt; java_eclipse\bin&#xA;java_eclipse\br2 =&gt; java_eclipse\br2" />
+      <option name="publishArtifactCondition" value="ALWAYS" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_33" />
+      <setting-ref ref="RUNNER_115" />
+      <setting-ref ref="RUNNER_117" />
+      <setting-ref ref="RUNNER_118" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_115" name="" type="Maven2">
+        <parameters>
+          <param name="goals" value="clean test" />
+          <param name="localRepoScope" value="mavenDefault" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="java_eclipse/pom.xml" />
+          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_116" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[sleep 60 
+Write-Host xxxx]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_118" name="PowerShell2" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[sleep 60 
+Write-Host yyy]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="execute_always" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_117" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo succeess1233333
+ping 127.0.0.1 -n 60 > nul]]></param>
+          <param name="teamcity.step.mode" value="execute_always" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="CustomArtifactsPublishing_TestArtifavts" />
+      <vcs-entry-ref root-id="Vs1_SvnHttpsLocalhost8443svnJavaEclipse" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_33" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="matchesRegex" />
+          <param name="buildFailureOnMessage.messagePattern" value="moreover" />
+          <param name="buildFailureOnMessage.outputText" value="Error2" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

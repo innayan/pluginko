@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f1334490-3dcb-4cd0-b9ee-96a3d2b83129" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Build Features with XSS</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_12" />
+    </disabled-settings>
+    <parameters />
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_12" type="xml-report-plugin">
+        <parameters>
+          <param name="xmlReportParsing.reportDirs" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;xmlreport&quot;);&lt;/script&gt;" />
+          <param name="xmlReportParsing.reportType" value="junit" />
+        </parameters>
+      </extension>
+      <extension id="JetBrains.AssemblyInfo" type="JetBrains.AssemblyInfo">
+        <parameters>
+          <param name="assembly-format" value="%system.build.number%A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(456);&lt;/script&gt;" />
+          <param name="file-format" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(123);&lt;/script&gt;" />
+          <param name="info-format" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(234);&lt;/script&gt;" />
+        </parameters>
+      </extension>
+      <extension id="runAs-build-feature" type="runAs-build-feature">
+        <parameters>
+          <param name="secure:teamcity.runAs.password" value="credentialsJSON:ea1a7f77-cf42-4419-9992-0fb743fa753e" />
+          <param name="teamcity.runAs.loggingLevel" value="off" />
+          <param name="teamcity.runAs.username" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;111runas&quot;);&lt;/script&gt;" />
+          <param name="teamcity.runAs.windowsIntegrityLlevel" value="auto" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_14" type="AutoMergeFeature">
+        <parameters>
+          <param name="teamcity.automerge.buildStatusCondition" value="successful" />
+          <param name="teamcity.automerge.dstBranch" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;merge&quot;);&lt;/script&gt;" />
+          <param name="teamcity.automerge.message" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(93847);&lt;/script&gt;" />
+          <param name="teamcity.automerge.srcBranchFilter" value="*" />
+          <param name="teamcity.merge.policy" value="alwaysCreateMergeCommit" />
+        </parameters>
+      </extension>
+      <extension id="swabra" type="swabra">
+        <parameters>
+          <param name="swabra.enabled" value="swabra.after.build" />
+          <param name="swabra.rules" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(444);&lt;/script&gt;" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_18" type="commit-status-publisher">
+        <parameters>
+          <param name="github_authentication_type" value="token" />
+          <param name="github_host" value="https://api.github.com" />
+          <param name="publisherId" value="githubStatusPublisher" />
+          <param name="secure:github_access_token" value="credentialsJSON:ea1a7f77-cf42-4419-9992-0fb743fa753e" />
+        </parameters>
+      </extension>
+      <extension id="DockerSupport" type="DockerSupport">
+        <parameters>
+          <param name="login2registry" value="PROJECT_EXT_18" />
+          <param name="loginCheckbox" value="on" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_19" type="jb.nuget.auth">
+        <parameters>
+          <param name="nuget.auth.feed" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;nuget&quot;);&lt;/script&gt;" />
+          <param name="nuget.auth.username" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(555);&lt;/script&gt;" />
+          <param name="secure:nuget.auth.password" value="credentialsJSON:bdb7e090-23e1-44f2-b389-462a4232dbc5" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_20" type="NuGetPackagesIndexer">
+        <parameters>
+          <param name="feed" value="PotentialXss/default" />
+        </parameters>
+      </extension>
+      <extension id="ruby.env.configurator" type="ruby.env.configurator">
+        <parameters>
+          <param name="ui.ruby.configurator.fail.build.if.interpreter.not.found" value="true" />
+          <param name="ui.ruby.configurator.ruby.interpreter.path" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;ruby&quot;);&lt;/script&gt;" />
+          <param name="ui.ruby.configurator.rvm.gemset.create.if.non.exists" value="true" />
+          <param name="ui.ruby.configurator.rvm.rvmrc.path" value=".rvmrc" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_21" type="JetBrains.SharedResources">
+        <parameters>
+          <param name="locks-param" value="eee readLock A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;re1&quot;);&lt;/script&gt;" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_22" type="VcsLabeling">
+        <parameters>
+          <param name="labelingPattern" value="build-A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;vcs&quot;);&lt;/script&gt;" />
+          <param name="vcsRootId" value="__ALL__" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_23" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="contains" />
+          <param name="buildFailureOnMessage.messagePattern" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;text&quot;);&lt;/script&gt;" />
+          <param name="buildFailureOnMessage.outputText" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;text1&quot;);&lt;/script&gt;" />
+          <param name="buildFailureOnMessage.reverse" value="false" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_24" type="VcsLabeling">
+        <parameters>
+          <param name="labelingPattern" value="build-%system.build.number%A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;xss&quot;);&lt;/script&gt;" />
+          <param name="vcsRootId" value="__ALL__" />
+        </parameters>
+      </extension>
+      <extension id="ssh-agent-build-feature" type="ssh-agent-build-feature">
+        <parameters>
+          <param name="teamcitySshKey" value="id_rsa" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_25" type="JetBrains.FileContentReplacer">
+        <parameters>
+          <param name="teamcity.file.content.replacer.file.encoding" value="autodetect" />
+          <param name="teamcity.file.content.replacer.file.encoding.custom" value="autodetect" />
+          <param name="teamcity.file.content.replacer.pattern" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;fcr&quot;);&lt;/script&gt;" />
+          <param name="teamcity.file.content.replacer.pattern.case.sensitive" value="true" />
+          <param name="teamcity.file.content.replacer.regexMode" value="REGEX" />
+          <param name="teamcity.file.content.replacer.replacement" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;fcr1&quot;);&lt;/script&gt;" />
+          <param name="teamcity.file.content.replacer.wildcards" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;fcr2&quot;);&lt;/script&gt;" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_26" type="BuildFailureOnMessage">
+        <parameters>
+          <param name="buildFailureOnMessage.conditionType" value="contains" />
+          <param name="buildFailureOnMessage.messagePattern" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;xxx&quot;);&lt;/script&gt;" />
+          <param name="buildFailureOnMessage.outputText" value="A&lt;b&gt;'&quot;&amp;lt;'/&gt;&quot;/&gt;&lt;script&gt;alert(&quot;qwr&quot;);&lt;/script&gt;" />
+          <param name="buildFailureOnMessage.reverse" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+

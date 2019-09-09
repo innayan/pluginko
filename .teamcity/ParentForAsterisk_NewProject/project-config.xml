@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="ParentForAsterisk" uuid="f16aa9d3-e8d8-4c68-a644-eb2d6aecb6c0" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>New Project</name>
+  <parameters />
+  <cleanup />
+</project>
+
